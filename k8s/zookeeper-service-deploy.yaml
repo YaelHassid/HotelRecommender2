@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zookeeper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zookeeper
+  template:
+    metadata:
+      labels:
+        app: zookeeper
+    spec:
+      containers:
+        - name: zookeeper
+          image: bitnami/zookeeper:latest
+          env:
+            - name: ALLOW_ANONYMOUS_LOGIN
+              value: "yes"
+          ports:
+            - containerPort: 2181
+          volumeMounts:
+            - name: zookeeper-data
+              mountPath: /bitnami/zookeeper
+      volumes:
+        - name: zookeeper-data
+          persistentVolumeClaim:
+            claimName: zookeeper-data-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: zookeeper-data-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zookeeper
+spec:
+  ports:
+    - port: 2181
+      targetPort: 2181
+  selector:
+    app: zookeeper

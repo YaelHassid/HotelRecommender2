@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app
+spec:
+  selector:
+    app: app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5050
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: staysmart-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: app-container
+        image: yayahassid/stay-smart-app:latest 
+        ports:
+        - containerPort: 5050

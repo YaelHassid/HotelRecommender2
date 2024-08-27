@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #f8f8f8;
+}
+
+html, body {
+    height: 100%;
+    overflow-y: auto; /* Ensure the page is scrollable */
+}
+
+.container {
+    max-width: 400px; /* Increased width */
+    margin: 80px auto; /* Adjusted to use margin for centering and more spacing */
+    padding: 40px; /* Increased padding */
+    background-color: rgba(11, 11, 11, 0.5); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increased shadow for more depth */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    min-height: calc(100vh - 160px); /* Ensure container takes at least the full viewport height minus margins */
+}
+.container_rate {
+    max-width: 800px; /* Increased width */
+    margin: 80px auto; /* Adjusted to use margin for centering and more spacing */
+    padding: 40px; /* Increased padding */  
+    background-color: rgba(11, 11, 11, 0.5); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increased shadow for more depth */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    min-height: calc(100vh - 160px); /* Ensure container takes at least the full viewport height minus margins */
+}
+header, footer {
+    text-align: center;
+    margin-bottom: 30px; /* More space around headers and footers */
+}
+
+header h1 {
+    color: #f8f8f8; 
+}
+
+main h2 {
+    color: #f8f8f8; 
+}
+
+
+form {
+    width: 100%; /* Ensure form takes full width of container */
+}
+
+
+form label, form input, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px; /* Increased spacing between form elements */
+}
+
+button {
+    background-color: #272727; /* Dark red color for button */
+    color: white;
+    border: none;
+    padding: 15px; /* Increased padding */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #79becab2; /* Darker red on hover */
+}
+
+/* .prata-regular {
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-style: normal;
+} */
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* More space around rating containers */
+}
+
+.rating-container label {
+    margin-right: 15px; /* More space between labels and inputs */
+    min-width: 120px; /* Ensure labels are aligned and more spacious */
+}
+
+
+.hotel-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hotel-card {
+    background-color: rgba(11, 11, 11, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.hotel-card h3.hotel-name {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #f8f8f8;
+}
+
+.hotel-card img.hotel-image {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.hotel-card p {
+    margin: 10px 0;
+}
+
+.hotel-card a {
+    color: #79becab2;
+    text-decoration: none;
+    word-wrap: break-word; /* Break long words to fit within the container */
+    word-break: break-all;  /* Break long words if necessary */
+}
+
+.hotel-card a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: rgba(11, 11, 11, 0.8);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-left {
+    color: #f8f8f8;
+    font-size: 1.2em;
+}
+
+.navbar-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.navbar-right a.button {
+    background-color: #79becab2;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+}
+
+.navbar-right a.button:hover {
+    background-color: #67a6b3;
+}
+.logo {
+    height: 60px; /* Adjust the height as needed */
+    margin-right: 15px; /* Space between the logo and the username */
+    vertical-align: middle;
+}
+

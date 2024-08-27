@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .hotel-details {
+            max-width: 800px;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .hotel-details h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .hotel-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .hotel-details p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="hotel-details">
+        <h1>{{ hotel.name }}</h1>
+        <img src="{{ photo_url }}" alt="{{ hotel.name }}">
+        <p><strong>Address:</strong> {{ hotel.formatted_address }}</p>
+        <p><strong>Phone Number:</strong> {{ hotel.formatted_phone_number }}</p>
+        <p><strong>Rating:</strong> {{ hotel.rating }} / 5</p>
+        <p><strong>Website:</strong> <a href="{{ hotel.website }}" target="_blank">{{ hotel.website }}</a></p>
+        <p><strong>Open Now:</strong> {{ hotel.opening_hours.open_now if hotel.opening_hours else 'N/A' }}</p>
+    </div>
+</body>
+</html>

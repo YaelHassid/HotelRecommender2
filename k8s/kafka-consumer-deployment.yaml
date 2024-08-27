@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-consumer
+  template:
+    metadata:
+      labels:
+        app: kafka-consumer
+    spec:
+      containers:
+      - name: kafka-consumer
+        image: yayahassid/kafka-consumer:latest
+        ports:
+        - containerPort: 8080  # Replace with your application's port if needed
