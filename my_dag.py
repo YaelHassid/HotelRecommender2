@@ -65,7 +65,7 @@ def calculate_weights(df):
 
 def extract_and_train():
     # MongoDB connection URI
-    mongo_uri = 'mongodb+srv://cohenyaelh:Yaeli1998@recommendationsystem.7hege0c.mongodb.net/Hotel_Recommendation'
+    mongo_uri = ''
 
     # Use certifi to get the path to the CA bundle
     ca = certifi.where()
